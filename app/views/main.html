@@ -1,0 +1,58 @@
+<div class="">
+	<h2>{{portfolioName}}</h2>
+
+	<table class="table table-striped">
+		<thead>
+			<th>Company Name</th>
+			<th>Symbol</th>
+			<th class="text-right">Last Price</th>
+			<th class="text-right">Shares</th>
+			<th class="text-right">Market Value</th>
+
+		</thead>
+
+		<tbody>
+			<tr ng-repeat='stock in stockList'>
+				<td><a href="#/details/{{stock.symbol}}">{{stock.name}}</a></td>
+				<td>{{stock.symbol}}</td>
+				<td class="text-right">{{stock.lastPrice | currency}}</td>
+				<td class="text-right"><input type="number" ng-model="stock.shares"></input></td>
+				<td class="text-right">{{stock.lastPrice * stock.shares | currency}}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td class="text-right"></td>
+				<td class="text-right"><strong>Totals:</strong></td>
+				<td class="text-right"><strong>{{totalMarketValue() | currency}}</strong></td>
+			</tr>
+
+		</tbody>
+
+	</table>
+
+	<!--
+	<form novalidate class="css-form">
+			Company Name:
+			<input type="text" ng-model="newStock.name" required />
+			<br />
+			Symbol:
+			<input type="text" ng-model="newStock.symbol" required />
+			<br />
+			Buy Price:
+			<input type="number" ng-model="newStock.buyPrice"/>
+			<br />
+			Number of Shares
+			<input type="number" ng-model="newStock.shares"/>
+			<button class="btn btn-indented" ng-click="reset()">
+				RESET
+			</button>
+			<button class="btn btn-indented" type="button" ng-click="addStock(newStock);">
+				<i class="icon-plus"></i> Add Stock
+			</button>
+		</form>
+	-->
+	
+	
+
+</div>

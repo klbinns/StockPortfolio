@@ -1,0 +1,4 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+.table th.text-right, .table td.text-right { 
+	text-align: right; 
+}
